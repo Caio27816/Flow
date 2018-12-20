@@ -1,0 +1,22 @@
+{
+  "name": "SuperFilme",
+  "version": "1.0.0",
+  "description": "Um discord bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "whoami#4097",
+  "dependencies": {
+    "discord.js": "^11.3.2",
+    "enmap": "^0.3.2",
+    "moment": "^2.18.1",
+    "moment-duration-format": "^1.3.0",
+    "express": "^4.15.5",
+    "gif-search": "^2.0.1",
+    "ascii-art": "^1.4.4",
+    "quick.db": "^7.0.0-b15",
+    "parse-ms": "^2.0.0",
+    "ms": "^2.1.1"
+  }
+}
