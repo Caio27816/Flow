@@ -143,7 +143,7 @@ client.on("guildMemberAdd", async member => {
      member.guild.members.forEach(async mem => {
        var role = member.guild.roles.find(r => r.id === "478687942567526413");
        if(!member.roles.has(role)) return;
-       await mem.send(embedC);
+       await mem.user.send(embedC);
      
      });
       return;
