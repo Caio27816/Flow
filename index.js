@@ -120,7 +120,7 @@ client.on("guildMemberAdd", async member => {
                   
             });
         });
-    }); */
+    }); 
 
     const moment = require("moment");
     moment.locale("pt-br");	
@@ -147,7 +147,7 @@ client.on("guildMemberAdd", async member => {
      
      });
       return;
-    }
+    } */
 
 
 
