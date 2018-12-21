@@ -122,12 +122,18 @@ client.on("guildMemberAdd", async member => {
         });
     });
 
-
+    const moment = require("moment");
+    moment.locale("pt-br");	
     let criou = member.user.createdAt;
-    let criou_em = moment().diff(criou, 'days');
-
-    console.log(criou_em);
-    if(criou_em < 10) {
+    let criou_em = moment(criou).format("L");
+    criou_em.toString();
+    let aheio = criou_em.split("/");
+    let dia = parseInt(aheio[0]);
+    let mes = parseInt(aheio[1]);
+    let agorad = moment(Date.now()).format("L").toString().split("/").parseInt([0]);	
+    let agoram = moment(Date.now()).format("L").toString().split("/").parseInt([1]);
+    let agorads = 10-dia;
+    if(agoram === mes && agorads.toString().startsWith("-")) {
      var embedC = new Discord.RichEmbed()
      .setAuthor(member.user.tag+", suspeito!", member.user.avatarURL)
      .setColor("RANDOM")
