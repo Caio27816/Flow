@@ -90,7 +90,7 @@ client.on("message", async message => {
 
 client.on("guildMemberAdd", async member => {
 
-     var nmember = member.guild.roles.find(r => r.name === "🍁 | Não-Registrado");
+     /*var nmember = member.guild.roles.find(r => r.id === "478689638039552021");
      member.addRole(nmember);
      let avatar = member.user.avatarURL;
      if(!avatar) avatar = member.guild.iconURL;
@@ -107,7 +107,7 @@ client.on("guildMemberAdd", async member => {
            client.on('messageReactionAdd', async (reaction, user) => {
            if(reaction.message.id !== msg.id) return;  
            if(reaction.emoji.name === "✅" && user.id !== reaction.message.author.id) {
-           let membro = member.guild.roles.find("name", "👤 | Membro");  
+           let membro = member.guild.roles.find("id", "478689638039552021");  
            await member.addRole(membro);  
            await member.removeRole(nmember);             
           
@@ -120,7 +120,7 @@ client.on("guildMemberAdd", async member => {
                   
             });
         });
-    });
+    }); */
 
     const moment = require("moment");
     moment.locale("pt-br");	
