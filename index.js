@@ -10,7 +10,7 @@ client.on("ready", () => {
   //;ᴍᴇᴍʙʀᴏs: sᴛᴀᴛᴜs
     function changing_status() {
       try {
-        delete require.cache[require.resolve(`./xp.js`)];
+        delete require.cache[require.resolve(`./commands/xp.js`)];
       } catch (e) {
         return console.log(e);
       }
