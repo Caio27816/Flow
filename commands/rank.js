@@ -11,7 +11,7 @@ exports.run = async (client, message, args) => {
       content += `${i+1}. ${user} ~ ${money[i].data}$\n`
   }
 
-  const embed = new Discord.RichEmbed()
+  const embed = new discord.RichEmbed()
   .setAuthor(`${message.guild.name} - RANK!`, message.guild.iconURL)
   .setDescription(content)
   .setColor(0x51267)
