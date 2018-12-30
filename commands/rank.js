@@ -8,10 +8,10 @@ exports.run = async (client, message, args) => {
   for (let i = 0; i < money.length; i++) {
       let user = client.users.get(money[i].ID.split('_')[1]).username
 
-      content += `${i+1}. ${user} ~ ${money[i].data}$\n`
+      content += `${i+1}. ${user} ~ ${money[i].data}\n`
   }
 
-  const embed = new discord.RichEmbed()
+  const embed = new Discord.RichEmbed()
   .setAuthor(`${message.guild.name} - RANK!`, message.guild.iconURL)
   .setDescription(content)
   .setColor(0x51267)
