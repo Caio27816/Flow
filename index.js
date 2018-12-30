@@ -9,6 +9,11 @@ client.on("ready", () => {
     console.log("Bot iniciado no Flow!");
   //;ᴍᴇᴍʙʀᴏs: sᴛᴀᴛᴜs
     function changing_status() {
+      try {
+        delete require.cache[require.resolve(`./xp.js`)];
+      } catch (e) {
+        return console.log(e);
+      }
     var server  = client.guilds.get("478563030670508033");
    
 
@@ -20,11 +25,6 @@ client.on("ready", () => {
      mem.setName(`ᴍᴇᴍʙʀᴏs: ${server.memberCount}`);
      return;
    }
-   try {
-    delete require.cache[require.resolve(`./xp.js`)];
-  } catch (e) {
-    return console.log(e);
-  }
 }
     setInterval(changing_status, 9000);
 });
