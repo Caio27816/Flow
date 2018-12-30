@@ -1,3 +1,4 @@
+require('http').createServer().listen(3000);
 const Discord = require('discord.js');
 const config = require("./config.json");
 const client = new Discord.Client();
@@ -11,7 +12,7 @@ client.on("ready", () => {
     var server  = client.guilds.get("478563030670508033");
    
 
-   const mem =  server.channels.get("525711309220872211");
+   const mem =  server.channels.get("524632102755368960");
    const nm = mem.name;
    var nmm = nm.split(" ");
    let nmi = parseInt(nmm[1]);
@@ -19,6 +20,11 @@ client.on("ready", () => {
      mem.setName(`ᴍᴇᴍʙʀᴏs: ${server.memberCount}`);
      return;
    }
+   try {
+    delete require.cache[require.resolve(`./xp.js`)];
+  } catch (e) {
+    return console.log(e);
+  }
 }
     setInterval(changing_status, 9000);
 });
@@ -90,7 +96,7 @@ client.on("message", async message => {
 
 client.on("guildMemberAdd", async member => {
 
-     /*var nmember = member.guild.roles.find(r => r.id === "478689638039552021");
+     var nmember = member.guild.roles.find(r => r.name === "🍁 | Não-Registrado");
      member.addRole(nmember);
      let avatar = member.user.avatarURL;
      if(!avatar) avatar = member.guild.iconURL;
@@ -107,7 +113,7 @@ client.on("guildMemberAdd", async member => {
            client.on('messageReactionAdd', async (reaction, user) => {
            if(reaction.message.id !== msg.id) return;  
            if(reaction.emoji.name === "✅" && user.id !== reaction.message.author.id) {
-           let membro = member.guild.roles.find("id", "478689638039552021");  
+           let membro = member.guild.roles.find("name", "👤 | Membro");  
            await member.addRole(membro);  
            await member.removeRole(nmember);             
           
@@ -120,20 +126,14 @@ client.on("guildMemberAdd", async member => {
                   
             });
         });
-    }); 
+    });
 
-    const moment = require("moment");
-    moment.locale("pt-br");	
+
     let criou = member.user.createdAt;
-    let criou_em = moment(criou).format("L");
-    criou_em.toString();
-    let aheio = criou_em.split("/");
-    let dia = parseInt(aheio[0]);
-    let mes = parseInt(aheio[1]);
-    let agorad = moment(Date.now()).format("L").toString().split("/").parseInt([0]);	
-    let agoram = moment(Date.now()).format("L").toString().split("/").parseInt([1]);
-    let agorads = 10-dia;
-    if(agoram === mes && agorads.toString().startsWith("-")) {
+    let criou_em = moment().diff(criou, 'days');
+
+    console.log(criou_em);
+    if(criou_em < 10) {
      var embedC = new Discord.RichEmbed()
      .setAuthor(member.user.tag+", suspeito!", member.user.avatarURL)
      .setColor("RANDOM")
@@ -143,11 +143,11 @@ client.on("guildMemberAdd", async member => {
      member.guild.members.forEach(async mem => {
        var role = member.guild.roles.find(r => r.id === "478687942567526413");
        if(!member.roles.has(role)) return;
-       await mem.user.send(embedC);
+       await mem.send(embedC);
      
      });
       return;
-    } */
+    }
 
 
 
