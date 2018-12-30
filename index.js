@@ -17,7 +17,7 @@ client.on("ready", () => {
     var server  = client.guilds.get("478563030670508033");
    
 
-   const mem =  server.channels.get("524632102755368960");
+   const mem =  server.channels.get("525711309220872211");
    const nm = mem.name;
    var nmm = nm.split(" ");
    let nmi = parseInt(nmm[1]);
