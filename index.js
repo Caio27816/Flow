@@ -54,7 +54,7 @@ client.on("message", async message => {
 	const command = args.shift().toLowerCase();
   
   try {
-    
+    delete require.cache[require.resolve(`./commands/${command}.js`)];
     let commands = require(`./commands/${command}.js`);
     await commands.run(client, message, args);
   } catch (e) {
