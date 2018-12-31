@@ -2,9 +2,9 @@ const discord = require("discord.js");
 const db = require("quick.db");
 
 exports.run = async (client, message, args) => {
-  let money = db.startsWith(`xp_`, { sort: '.data'})
+  db.startsWith(`xp_`, { sort: '.data'}).then(money => {
   let content = "";
-  money.length = 15;
+  money.length = 10;
   for (let i = 0; i < money.length; i++) {
       let user = client.users.get(money[i].ID.split('_')[1]).username
 
@@ -18,5 +18,5 @@ exports.run = async (client, message, args) => {
   .setColor("red")
 
   message.channel.send(embed)
-  
+  });
 }
