@@ -9,8 +9,10 @@ exports.run = async (client, message, args) => {
       
       let finalOutput = "**Leaderboard** \n\n";
       for (var i in resp) {
-       finalOutput += `${i+1}`+client.users.get(resp[i].ID.split("_")[1]).username+"- "+resp[i].data;
+        let a = client.users.get(resp[i].ID.split("_")[1]).username;
+       finalOutput += `${a}- ${resp[i].data}`;
       }
+       
       message.channel.send(finalOutput);
   });
   
